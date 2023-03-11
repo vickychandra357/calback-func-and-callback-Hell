@@ -1,5 +1,23 @@
+let gameStart=document.getElementById('gamestart');
+gameStart.innerHTML='';
+
+let race100M=document.getElementById('Race100M')
+race100M.innerHTML='';
+let longJump=document.getElementById('LongJump')
+longJump.innerHTML='';
+let highJump=document.getElementById('HighJump')
+highJump.innerHTML='';
+let awardCeremony=document.getElementById('AwardCeremony')
+awardCeremony.innerHTML='';
+let Award = document.getElementById('AwardList')
+Award.innerHTML = '';
+
+let Finish = document.getElementById('finish')
+Finish.innerHTML = '';
+
 function OpeningCeremony() {
   console.log("Let the games begin!");
+  gameStart.innerHTML="Let the games begin!";
   const score = {
     red: 0,
     blue: 0,
@@ -8,7 +26,8 @@ function OpeningCeremony() {
   };
   setTimeout(() => {
     console.log("Starting Race100M...");
-    Race100M(score );
+    race100M.innerHTML="Starting Race100M...";
+    Race100M(score);
   }, 1000);
 }
 
@@ -26,6 +45,8 @@ function Race100M(score) {
   console.log("Race100M results:", score);
   setTimeout(() => {
     console.log("Starting LongJump...");
+    longJump.innerHTML="Starting LongJump...";
+    highJump.innerHTML="Starting HighJump...";
     LongJump(score, HighJump);
   }, 3000);
 }
@@ -38,6 +59,7 @@ function LongJump(score, HighJump) {
   console.log("LongJump winner:", color);
   setTimeout(() => {
     console.log("Starting HighJump...");
+    
     HighJump(score, AwardCeremony);
   }, 2000);
 }
@@ -57,11 +79,19 @@ function HighJump(score, AwardCeremony) {
 function AwardCeremony(score) {
   const sortedScores = Object.entries(score).sort((a, b) => b[1] - a[1]);
   console.log(`Award Ceremony Results:`);
+  awardCeremony.innerHTML="Award Ceremony Results:";
   console.log(`${sortedScores[0][0]} came first with ${sortedScores[0][1]} points.`);
   console.log(`${sortedScores[1][0]} came second with ${sortedScores[1][1]} points.`);
   console.log(`${sortedScores[2][0]} came third with ${sortedScores[2][1]} points.`);
+  Award.innerHTML = `
+                <li>First Prize: ${sortedScores[0][0]}</li>
+                <li>Second Prize: ${sortedScores[1][0]}</li>
+                <li>Third Prize: ${sortedScores[2][0]}</li>
+                `
+  Finish.innerHTML="Sports day is over!"              
 }
 
 OpeningCeremony(() => {
   console.log("Sports day is over.");
+  
 });
