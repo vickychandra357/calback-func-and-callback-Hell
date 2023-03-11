@@ -8,11 +8,11 @@ function OpeningCeremony() {
   };
   setTimeout(() => {
     console.log("Starting Race100M...");
-    Race100M(score, Race100M);
+    Race100M(score );
   }, 1000);
 }
 
-function Race100M(score, callback) {
+function Race100M(score) {
   const times = {
     red: Math.floor(Math.random() * 6) + 10,
     blue: Math.floor(Math.random() * 6) + 10,
@@ -32,9 +32,10 @@ function Race100M(score, callback) {
 
 function LongJump(score, HighJump) {
   const color = ["red", "yellow", "green", "blue"][Math.floor(Math.random() * 4)];
-  console.log("LongJump winner:", color);
+  // console.log("LongJump winner:", color);
   score[color] += 150;
   console.log("LongJump results:", score);
+  console.log("LongJump winner:", color);
   setTimeout(() => {
     console.log("Starting HighJump...");
     HighJump(score, AwardCeremony);
