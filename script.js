@@ -96,9 +96,9 @@ function AwardCeremony(score) {
   console.log(`${sortedScores[1][0]} came second with ${sortedScores[1][1]} points.`);
   console.log(`${sortedScores[2][0]} came third with ${sortedScores[2][1]} points.`);
   Award.innerHTML = `
-                <li>First Prize: ${sortedScores[0][0]}</li>
-                <li>Second Prize: ${sortedScores[1][0]}</li>
-                <li>Third Prize: ${sortedScores[2][0]}</li>
+                <li>First Prize: ${sortedScores[0][0]}  came first with ${sortedScores[0][1]} points.</li>
+                <li>Second Prize: ${sortedScores[1][0]}  came second with ${sortedScores[1][1]} points</li>
+                <li>Third Prize: ${sortedScores[2][0]}  came third with ${sortedScores[2][1]} points.</li>
                 `
   Finish.innerHTML="Sports day is over!"              
 }
