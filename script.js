@@ -62,6 +62,6 @@ function AwardCeremony(score) {
   console.log(`${sortedScores[2][0]} came third with ${sortedScores[2][1]} points.`);
 }
 
-OpeningCeremony((score) => {
+OpeningCeremony(() => {
   console.log("Sports day is over.");
 });
