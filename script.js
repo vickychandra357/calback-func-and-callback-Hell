@@ -3,12 +3,22 @@ gameStart.innerHTML='';
 
 let race100M=document.getElementById('Race100M')
 race100M.innerHTML='';
+
+// let RaceTime=document.getElementById('raceTime');
+// RaceTime.innerHTML='';
+
+// let RaceResult=document.getElementById('raceResult');
+// RaceResult.innerHTML='';
+
 let longJump=document.getElementById('LongJump')
 longJump.innerHTML='';
+
 let highJump=document.getElementById('HighJump')
 highJump.innerHTML='';
+
 let awardCeremony=document.getElementById('AwardCeremony')
 awardCeremony.innerHTML='';
+
 let Award = document.getElementById('AwardList')
 Award.innerHTML = '';
 
@@ -39,10 +49,12 @@ function Race100M(score) {
     yellow: Math.floor(Math.random() * 6) + 10,
   };
   console.log("Race100M times:", times);
+  // RaceTime.innerHTML="Race100M times:"+ times.value;
   const sortedTimes = Object.entries(times).sort((a, b) => a[1] - b[1]);
   score[sortedTimes[0][0]] += 50;
   score[sortedTimes[1][0]] += 25;
   console.log("Race100M results:", score);
+  // RaceResult.innerHTML="Race100M results:" + score.value;
   setTimeout(() => {
     console.log("Starting LongJump...");
     longJump.innerHTML="Starting LongJump...";
